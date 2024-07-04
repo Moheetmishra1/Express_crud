@@ -46,15 +46,14 @@ app.put("/updateproduct/:pid",(req,res)=>{
 })
 
 app.delete("/delete/:pid",(req,res)=>{
-    console.log("enter");
+    
 
     let filterProduct= products.filter((product)=>{
         return product.id !== Number(req.params.pid)
     })
-
     products= filterProduct;
     res.send(products)
-    // res.send(filterProduct)
+    
 })
 
 app.listen(6500,()=>{
